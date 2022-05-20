@@ -1,0 +1,13 @@
+grpc:
+  server:
+    port: 7001
+server:
+  port: 7111
+spring:
+  application:
+    name: huang-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        enabled: true
