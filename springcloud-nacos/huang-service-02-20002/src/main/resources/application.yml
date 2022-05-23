@@ -1,0 +1,9 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: huang-service-02
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.70.194.152:8848

@@ -1,0 +1,31 @@
+server:
+  port: 20001
+spring:
+  application:
+    name: huang-service-01
+  cloud:
+    nacos:
+      config:
+        #nacos服务器地址 多个用逗号分隔
+        server-addr: 124.70.194.152:8848
+        #分组名
+        group: SPRING_CLOUD_NACOS_GROUP
+        #配置文件扩展名
+        file-extension: yaml
+        #环境命名空间
+        namespace: 192214cc-fc70-44c1-8413-91b3cc617f52
+        #扩展通用配置 默认当前命名空间
+        extension-configs[0]:
+            data-id: ext-config-01.yaml
+            group: SPRING_CLOUD_NACOS_GROUP
+            #动态刷新配置
+            refresh: true
+        extension-configs[1]:
+            data-id: ext-config-02.yaml
+            group: SPRING_CLOUD_NACOS_GROUP
+            refresh: true
+      discovery:
+        server-addr: 124.70.194.152:8848
+        group: SPRING_CLOUD_NACOS_GROUP
+        namespace: 192214cc-fc70-44c1-8413-91b3cc617f52
+
