@@ -2,9 +2,10 @@ server:
   port: 20001
 spring:
   application:
-    name: huang-service-01
+    name: huang-service-01-20001
   cloud:
     nacos:
+      #配置管理功能 config
       config:
         #nacos服务器地址 多个用逗号分隔
         server-addr: 124.70.194.152:8848
@@ -24,8 +25,7 @@ spring:
             data-id: ext-config-02.yaml
             group: SPRING_CLOUD_NACOS_GROUP
             refresh: true
+      #服务注册功能
       discovery:
         server-addr: 124.70.194.152:8848
-        group: SPRING_CLOUD_NACOS_GROUP
         namespace: 192214cc-fc70-44c1-8413-91b3cc617f52
-

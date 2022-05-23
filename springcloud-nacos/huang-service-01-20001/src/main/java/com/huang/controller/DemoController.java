@@ -29,8 +29,7 @@ public class DemoController {
         return applicationContext.getEnvironment().getProperty("ext.config01") + "\r" + applicationContext.getEnvironment().getProperty("ext.config02");
     }
 
-
-    @GetMapping
+    @GetMapping("/serviceCall")
     public JSONObject testCall(){
         JSONObject result = new JSONObject();
         result.put("code",1);
