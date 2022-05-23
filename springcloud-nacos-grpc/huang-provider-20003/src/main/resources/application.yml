@@ -1,13 +1,13 @@
 grpc:
   server:
-    port: 7001
+    port: 19999
 server:
-  port: 7111
+  port: 20003
 spring:
   application:
-    name: huang-server
+    name: huang-provider-20003
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: 124.70.194.152:8848
         enabled: true

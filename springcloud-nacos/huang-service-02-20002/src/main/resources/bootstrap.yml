@@ -1,5 +1,5 @@
 server:
-  port: 20002
+  port: ${port:20002}
 spring:
   application:
     name: huang-service-02-20002

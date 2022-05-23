@@ -1,16 +1,17 @@
 grpc:
   client:
-    huang-server: # 服务名称
+    #服务名称
+    huang-provider-20003:
       negotiation-type: plaintext
       enableKeepAlive: true
       keepAliveWithoutCalls: true
 server:
-  port: 7112
+  port: 20004
 spring:
   application:
-    name: huang-consumer
+    name: huang-consumer-20004
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: 124.70.194.152:8848
         enabled: true

@@ -20,13 +20,13 @@ import java.util.Iterator;
 public class TestController {
 
     // 阻塞gRPC
-    @GrpcClient("huang-server")
+    @GrpcClient("huang-provider-20003")
     private UserServiceGrpc.UserServiceBlockingStub userServiceBlockingStub;
     // 非阻塞gRPC 获得Future对象
-    @GrpcClient("huang-server")
+    @GrpcClient("huang-provider-20003")
     private UserServiceGrpc.UserServiceFutureStub userServiceFutureStub;
     // 双向流通讯
-    @GrpcClient("huang-server")
+    @GrpcClient("huang-provider-20003")
     private UserServiceGrpc.UserServiceStub userServiceStub;
 
     @GetMapping("test1")
