@@ -1,0 +1,39 @@
+server:
+  port: ${port:20006}
+  servlet:
+    context-path: /huang-application-20006
+spring:
+  application:
+    name: huang-application-20006
+  cloud:
+    nacos:
+      #配置管理功能 config
+      config:
+        #nacos服务器地址 多个用逗号分隔
+        server-addr: 124.70.194.152:8848
+        #分组名
+        group: SPRING_CLOUD_NACOS_DUBBO_GROUP
+        #配置文件扩展名
+        file-extension: yaml
+        #环境命名空间
+        namespace: 192214cc-fc70-44c1-8413-91b3cc617f52
+      #服务注册功能
+      discovery:
+        server-addr: 124.70.194.152:8848
+        namespace: 192214cc-fc70-44c1-8413-91b3cc617f52
+        group: SPRING_CLOUD_NACOS_DUBBO_GROUP
+dubbo:
+  #消费端
+  cloud:
+    # 指定需要订阅的服务提供方，默认值*，会订阅所有服务，不建议使用
+    subscribed-services: huang-service-01-server-20007,huang-service-02-server-20008
+    protocol:
+      # dubbo 协议
+      name: dubbo
+      # dubbo 协议端口（ -1 表v示自增端口，从 20880 开始）
+      port: -1
+      registry:
+        address: nacos://124.70.194.152:8848
+  protocol:
+    port: 20083
+    name: dubbo

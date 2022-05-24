@@ -1,0 +1,29 @@
+server:
+  port: ${port:20005}
+  servlet:
+    context-path: /huang-api-gateway-20005
+spring:
+  application:
+    name: huang-api-gateway-20005
+  cloud:
+    nacos:
+      #配置管理功能 config
+      config:
+        #nacos服务器地址 多个用逗号分隔
+        server-addr: 124.70.194.152:8848
+        #分组名
+        group: SPRING_CLOUD_NACOS_DUBBO_GROUP
+        #配置文件扩展名
+        file-extension: yaml
+        #环境命名空间
+        namespace: 192214cc-fc70-44c1-8413-91b3cc617f52
+      #服务注册功能
+      discovery:
+        server-addr: 124.70.194.152:8848
+        namespace: 192214cc-fc70-44c1-8413-91b3cc617f52
+        group: SPRING_CLOUD_NACOS_DUBBO_GROUP
+zuul:
+  routes:
+    huang-application-20006:
+      stripPrefix: false
+      path: /huang-application-20006/**
