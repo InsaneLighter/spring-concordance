@@ -1,0 +1,24 @@
+spring:
+  rabbitmq:
+    host: 150.158.169.154
+    port: 5672
+    username: huang
+    password: huanghong0724
+    template:
+      #设置为true后 消费者在消息没有被路由到合适队列情况下，会被消费者这边的ReturnCallback监听，不会自动删除
+      mandatory: true
+    #发送失败消息退回
+    publisher-returns: true
+    # ConfirmCallback开启发送到交换机Exchange触发回调
+    publisher-confirm-type: correlated
+    listener:
+      simple:
+        #手工确认
+        acknowledge-mode: manual
+        retry:
+          #开启消费者重试
+          enabled: true
+          #最大重试次数
+          max-attempts: 5
+          #重试间隔秒数（3s）
+          initial-interval: 3000

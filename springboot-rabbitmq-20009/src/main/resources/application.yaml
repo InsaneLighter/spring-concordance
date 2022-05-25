@@ -1,0 +1,5 @@
+server:
+  port: 20009
+spring:
+  profiles:
+    active: standAlone
