@@ -1,6 +1,7 @@
 package com.huang.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.huang.service.CommonService;
 import com.huang.service.Demo01Service;
 import com.huang.service.Demo02Service;
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     @Autowired
     private Demo02Service demoService;
+    @Autowired
+    private CommonService commonService;
     @DubboReference
     private Demo01Service demo01Service;
 
@@ -31,5 +34,10 @@ public class DemoController {
     @GetMapping("/service01/serviceCall")
     public JSONObject service01ServiceCall(){
         return demo01Service.serviceCall();
+    }
+
+    @GetMapping("/commonServiceCall")
+    public JSONObject commonServiceCall(){
+        return commonService.commonRequest();
     }
 }
